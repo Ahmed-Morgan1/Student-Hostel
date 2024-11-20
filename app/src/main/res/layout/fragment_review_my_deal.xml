@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ReviewMyDealFragment">
+
+    <LinearLayout
+        android:id="@+id/linear_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        >
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            tools:src="@drawable/img" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            tools:src="@drawable/img_1" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            tools:src="@drawable/img_2" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/Ad_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Family Apartment For Sale"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/linear_img"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="40dp"
+        />
+    <TextView
+        android:id="@+id/total_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="150.50$"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/linear_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/Ad_title"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="40dp"
+        />
+    <ImageView
+        android:id="@+id/location_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_location_on_24"
+        app:layout_constraintTop_toBottomOf="@id/Ad_title"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/Ad_title"
+        />
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Elmahalla Elkubra "
+        app:layout_constraintStart_toEndOf="@id/location_img"
+        app:layout_constraintTop_toBottomOf="@id/Ad_title"
+        android:layout_marginTop="22dp"
+        android:layout_marginStart="4dp"
+        />
+    <TextView
+        android:id="@+id/general_information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/general_information"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="40dp"
+        />
+    <LinearLayout
+        android:id="@+id/table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/general_information"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="4dp">
+
+            <TextView
+                android:id="@+id/label_published_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Published Date"
+                android:textSize="14sp"
+                android:textColor="#808080" />
+
+            <TextView
+                android:id="@+id/value_published_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="2 December 2020"
+                android:textSize="14sp"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <!-- عنصر جديد -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="4dp">
+
+            <TextView
+                android:id="@+id/label_advertise_status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Advertise Status"
+                android:textSize="14sp"
+                android:textColor="#808080" />
+
+            <TextView
+                android:id="@+id/value_advertise_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Sale"
+                android:textSize="14sp"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <!-- عنصر ثالث -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="4dp">
+
+            <TextView
+                android:id="@+id/label_housing_shape"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Housing Shape"
+                android:textSize="14sp"
+                android:textColor="#808080" />
+
+            <TextView
+                android:id="@+id/value_housing_shape"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Apartment"
+                android:textSize="14sp"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <!-- عنصر رابع -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="4dp">
+
+            <TextView
+                android:id="@+id/label_room_living_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Room + Living Number"
+                android:textSize="14sp"
+                android:textColor="#808080" />
+
+            <TextView
+                android:id="@+id/value_room_living_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="4 + 1"
+                android:textSize="14sp"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <!-- عنصر خامس -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="4dp">
+
+            <TextView
+                android:id="@+id/label_gross_net_area"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Gross / Net M²"
+                android:textSize="14sp"
+                android:textColor="#808080" />
+
+            <TextView
+                android:id="@+id/value_gross_net_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="150 M² / 135 M²"
+                android:textSize="14sp"
+                android:textColor="#000000" />
+        </LinearLayout>
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="280dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/next"
+        android:textSize="20sp"
+        android:backgroundTint="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/table" />
+</androidx.constraintlayout.widget.ConstraintLayout>

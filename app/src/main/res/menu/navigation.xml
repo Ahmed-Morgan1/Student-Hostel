@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:title="@string/home"
+        android:icon="@drawable/white_home_icon"
+        />
+    <item
+        android:id="@+id/Favourite"
+        android:title="@string/favourite"
+        android:icon="@drawable/white_favurite_icon"
+        />
+    <item
+        android:id="@+id/Add_Hostel"
+        android:title="@string/add_hostel"
+        android:icon="@drawable/white_add_icon"
+        />
+    <item
+        android:id="@+id/profile"
+        android:title="@string/profile"
+        android:icon="@drawable/white_person_icon"
+        />
+</menu>

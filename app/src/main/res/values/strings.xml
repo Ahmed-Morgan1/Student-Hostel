@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Student Hostel</string>
+    <string name="home">Home</string>
+    <string name="favourite">Favourite</string>
+    <string name="profile">Profile</string>
+    <string name="add_hostel">Add Hostel</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="connect_with_google">Connect with Google</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="still_not_a_member">Still Not a Member?</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="signup">Signup</string>
+    <string name="login_now">Login now !</string>
+    <string name="already_a_member">Already a Member?</string>
+    <string name="email">Email</string>
+    <string name="still_not_a_member2">Still Not a Member?</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="fax">Fax</string>
+    <string name="next">Next</string>
+    <string name="contact">Contact</string>
+    <string name="sms">Sms</string>
+    <string name="your_ad_has_been_published_successfully">Your ad has been published successfully</string>
+    <string name="back_to_home">Back To Home</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="tax">Tax</string>
+    <string name="pay_now">Pay Now</string>
+    <string name="general_information">General Information</string>
+    <string name="title">Title</string>
+    <string name="number_of_living_room">Number of Living Room</string>
+    <string name="number_of_room">Number of Room</string>
+    <string name="gross_m">Gross M²</string>
+    <string name="net_m">Net M²</string>
+    <string name="floor_location">Floor Location</string>
+    <string name="warming_type">Warming Type</string>
+    <string name="status">Status</string>
+    <string name="you_can_add_30_photos_to_your_ad">You Can Add 30 Photos to your Ad</string>
+    <string name="upload_from_your_phone">Upload From Your Phone</string>
+    <string name="rental_income">Rental Income</string>
+</resources>
