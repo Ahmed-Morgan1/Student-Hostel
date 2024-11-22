@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+
+    android:layout_margin="4dp">
+
+    <ImageView
+        android:id="@+id/apartment_img"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/apartment_img"
+        android:scaleType="centerCrop"
+        app:layout_constraintHeight_percent=".5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars"
+
+        />
+
+
+    <!--    desc apartment-->
+    <TextView
+        android:id="@+id/txt_apartment_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/txt_apartment_address"
+        app:layout_constraintTop_toBottomOf="@id/apartment_img"
+        tools:text="@tools:sample/full_names" />
+
+    <TextView
+        android:id="@+id/txt_apartment_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/txt_apartment_date"
+        app:layout_constraintTop_toBottomOf="@id/txt_apartment_type"
+        tools:text="@tools:sample/full_names" />
+
+    <TextView
+        android:id="@+id/txt_apartment_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/layout_apartment_info"
+        app:layout_constraintTop_toBottomOf="@id/txt_apartment_address"
+        tools:text="@tools:sample/full_names" />
+
+
+    <LinearLayout
+        android:id="@+id/layout_apartment_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_apartment_date">
+
+        <TextView
+            android:id="@+id/txt_room_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="4dp"
+            android:maxLength="2"
+            android:paddingHorizontal="4dp"
+            app:drawableStartCompat="@drawable/ic_room_counter"
+            tools:text="@tools:sample/us_zipcodes" />
+
+
+        <TextView
+            android:id="@+id/txt_floar_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="4dp"
+            android:maxLength="2"
+            android:paddingHorizontal="4dp"
+            app:drawableStartCompat="@drawable/ic_stairs"
+            tools:text="@tools:sample/us_zipcodes" />
+
+
+        <TextView
+            android:id="@+id/txt_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="4dp"
+            android:maxLength="3"
+            android:paddingHorizontal="4dp"
+            app:drawableStartCompat="@drawable/ic_m2"
+            tools:text="@tools:sample/us_zipcodes" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
