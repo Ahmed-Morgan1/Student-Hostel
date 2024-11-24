@@ -54,4 +54,5 @@
     <string name="filter_result">filter result</string>
     <string name="apartment_of_sale">Apartment for sale</string>
     <string name="footer_img">fouter img</string>
+    <string name="apartment_for_type">Apartment for %1$s</string>
 </resources>
