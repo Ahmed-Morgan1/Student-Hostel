@@ -53,5 +53,5 @@
     <string name="search_places">search Places</string>
     <string name="filter_result">filter result</string>
     <string name="apartment_of_sale">Apartment for sale</string>
-    <string name="fouter_img">fouter img</string>
+    <string name="footer_img">fouter img</string>
 </resources>
