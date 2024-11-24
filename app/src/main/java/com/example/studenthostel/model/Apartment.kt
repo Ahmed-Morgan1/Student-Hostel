@@ -2,12 +2,13 @@ package com.example.studenthostel.model
 
 data class Apartment(
     val floor: Byte,
-    val roomCounter: Int,
+    val roomCounter: Byte,
     val area: Short,
     val price: Float,
     val address: String,
     val imgCoverUrl: String,
-    val apartmentStatusType: ApartmentStatusType=ApartmentStatusType.SALE
+    val date: String,
+    val apartmentStatusType: ApartmentStatusType = ApartmentStatusType.SALE
 ) {
     // Enum class to represent the type of apartment (rent or sale)
     enum class ApartmentStatusType {
