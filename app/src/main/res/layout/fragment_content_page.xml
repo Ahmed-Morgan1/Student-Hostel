@@ -39,6 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="Large Family House"
+                android:textColor="@color/black"
                 app:layout_constraintTop_toBottomOf="@id/tool_bar"
                 app:layout_constraintStart_toStartOf="parent"
                 android:textSize="22sp"
@@ -52,6 +53,7 @@
                 android:layout_margin="8dp"
                 android:textSize="22sp"
                 android:textStyle="bold"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tool_bar"
                 tools:text="260$" />

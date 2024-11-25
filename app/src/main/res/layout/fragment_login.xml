@@ -38,6 +38,7 @@
         android:src="@drawable/google"
         app:layout_constraintTop_toTopOf="@id/connect_google"
         app:layout_constraintBottom_toBottomOf="@id/connect_google"
+        android:padding="8dp"
         android:layout_marginStart="53dp" />
 
     <com.google.android.material.textfield.TextInputLayout
