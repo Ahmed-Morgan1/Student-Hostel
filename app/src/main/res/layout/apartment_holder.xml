@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="apartment"
+            type="com.example.studenthostel.model.Apartment"/>
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
+        android:background="@drawable/box_background"
+        android:padding="6dp">
+
+        <ImageView
+            android:id="@+id/apartment_img"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/apartment_img"
+            android:scaleType="centerCrop"
+            android:src="@drawable/welcome_img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <!--    desc apartment-->
+        <TextView
+            android:id="@+id/txt_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(apartment.price + ` $`)}"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/txt_apartment_type"
+            app:layout_constraintTop_toBottomOf="@id/apartment_img"
+            tools:text="@tools:sample/us_zipcodes" />
+
+        <TextView
+            android:id="@+id/txt_apartment_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/txt_apartment_address"
+            app:layout_constraintTop_toBottomOf="@id/txt_price"
+            app:type="@{apartment.apartmentStatusType}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/txt_apartment_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{apartment.address}"
+            app:layout_constraintBottom_toTopOf="@id/txt_apartment_date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_apartment_type"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/txt_apartment_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{apartment.date}"
+            app:layout_constraintBottom_toTopOf="@id/layout_apartment_info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_apartment_address"
+            tools:text="@tools:sample/full_names" />
+
+
+        <LinearLayout
+            android:id="@+id/layout_apartment_info"
+            android:layout_width="293dp"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_apartment_date">
+
+            <TextView
+                android:id="@+id/txt_room_counter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="4dp"
+                android:maxLength="2"
+                android:paddingHorizontal="4dp"
+                android:text="@{String.valueOf(apartment.roomCounter)}"
+                app:drawableStartCompat="@drawable/ic_room_counter"
+                tools:text="@tools:sample/us_zipcodes" />
+
+
+            <TextView
+                android:id="@+id/txt_floar_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="4dp"
+                android:maxLength="2"
+                android:paddingHorizontal="4dp"
+                android:text="@{String.valueOf(apartment.floor)}"
+                app:drawableStartCompat="@drawable/ic_stairs"
+                tools:text="@tools:sample/us_zipcodes" />
+
+
+            <TextView
+                android:id="@+id/txt_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="4dp"
+                android:maxLength="3"
+                android:paddingHorizontal="4dp"
+                android:text="@{String.valueOf(apartment.area)}"
+                app:drawableStartCompat="@drawable/ic_m2"
+                tools:text="@tools:sample/us_zipcodes" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
