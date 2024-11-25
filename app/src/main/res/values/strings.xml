@@ -41,4 +41,18 @@
     <string name="you_can_add_30_photos_to_your_ad">You Can Add 30 Photos to your Ad</string>
     <string name="upload_from_your_phone">Upload From Your Phone</string>
     <string name="rental_income">Rental Income</string>
+    <string name="welcome_image">Welcome image</string>
+    <string name="find_any_thing_you_want">find any thing you want</string>
+    <string name="your_dream_house_is_here">your dream house is here</string>
+    <string name="featured_sales">Featured Sales</string>
+    <string name="all">All</string>
+    <string name="apartment_img">Apartment img</string>
+    <string name="featured_rental">Featured Rental</string>
+    <string name="all_sales">All Sales</string>
+    <string name="all_rental">All Rental</string>
+    <string name="search_places">search Places</string>
+    <string name="filter_result">filter result</string>
+    <string name="apartment_of_sale">Apartment for sale</string>
+    <string name="footer_img">fouter img</string>
+    <string name="apartment_for_type">Apartment for %1$s</string>
 </resources>
