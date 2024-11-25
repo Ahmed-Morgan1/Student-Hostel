@@ -68,25 +68,18 @@
         android:layout_marginStart="18dp"
         android:layout_marginTop="40dp"
         />
-    <ImageView
-        android:id="@+id/location_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/baseline_location_on_24"
-        app:layout_constraintTop_toBottomOf="@id/Ad_title"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="@id/Ad_title"
-        />
     <TextView
-        android:id="@+id/location"
+        android:id="@+id/address_of_ad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Elmahalla Elkubra "
-        app:layout_constraintStart_toEndOf="@id/location_img"
+        app:drawableStartCompat="@drawable/ic_location_on"
+        tools:text="London , Oxford St."
         app:layout_constraintTop_toBottomOf="@id/Ad_title"
-        android:layout_marginTop="22dp"
-        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toStartOf="@id/Ad_title"
+        android:textSize="18sp"
+        android:layout_marginVertical="4dp"
         />
+
     <TextView
         android:id="@+id/general_information"
         android:layout_width="wrap_content"
