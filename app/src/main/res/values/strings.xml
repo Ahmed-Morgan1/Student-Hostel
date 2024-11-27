@@ -55,4 +55,11 @@
     <string name="apartment_of_sale">Apartment for sale</string>
     <string name="footer_img">fouter img</string>
     <string name="apartment_for_type">Apartment for %1$s</string>
+    <string name="confirm_and_pay">confirm and pay</string>
+    <string name="book_now">Book Now</string>
+    <string name="old_password">old password</string>
+    <string name="new_password">New Password</string>
+    <string name="old_password2">Old Password</string>
+    <string name="s_ave">S ave</string>
+    <string name="save">SAVE</string>
 </resources>
