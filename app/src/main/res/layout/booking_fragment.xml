@@ -331,7 +331,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:text="@string/confirm_and_pay"
-                android:backgroundTint="@drawable/btn_confirm"
+                android:backgroundTint="@color/red"
                 />
 
             <com.google.android.material.bottomnavigation.BottomNavigationView

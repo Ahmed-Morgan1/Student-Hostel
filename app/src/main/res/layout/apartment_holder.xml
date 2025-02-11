@@ -6,7 +6,7 @@
     <data>
         <variable
             name="apartment"
-            type="com.example.studenthostel.model.Apartment"/>
+            type="com.fady.data.dto.ApartmentDto"/>
     </data>
 
 
@@ -51,7 +51,6 @@
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@id/txt_apartment_address"
             app:layout_constraintTop_toBottomOf="@id/txt_price"
-            app:type="@{apartment.apartmentStatusType}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             tools:text="@tools:sample/full_names" />
@@ -71,7 +70,7 @@
             android:id="@+id/txt_apartment_date"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{apartment.date}"
+            android:text=""
             app:layout_constraintBottom_toTopOf="@id/layout_apartment_info"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -96,7 +95,7 @@
                 android:drawablePadding="4dp"
                 android:maxLength="2"
                 android:paddingHorizontal="4dp"
-                android:text="@{String.valueOf(apartment.roomCounter)}"
+                android:text=""
                 app:drawableStartCompat="@drawable/ic_room_counter"
                 tools:text="@tools:sample/us_zipcodes" />
 
@@ -108,7 +107,7 @@
                 android:drawablePadding="4dp"
                 android:maxLength="2"
                 android:paddingHorizontal="4dp"
-                android:text="@{String.valueOf(apartment.floor)}"
+                android:text=""
                 app:drawableStartCompat="@drawable/ic_stairs"
                 tools:text="@tools:sample/us_zipcodes" />
 
@@ -120,7 +119,7 @@
                 android:drawablePadding="4dp"
                 android:maxLength="3"
                 android:paddingHorizontal="4dp"
-                android:text="@{String.valueOf(apartment.area)}"
+                android:text=""
                 app:drawableStartCompat="@drawable/ic_m2"
                 tools:text="@tools:sample/us_zipcodes" />
 

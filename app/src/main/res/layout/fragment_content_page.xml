@@ -405,7 +405,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:text="@string/book_now"
-                android:backgroundTint="@drawable/btn_confirm"
+                android:backgroundTint="@color/red"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
