@@ -15,19 +15,19 @@ import retrofit2.http.Path
 interface ApiService {
 
     // Apartment Endpoints
-    @GET("api/ApartmentDto/GetAll")
+    @GET("api/Apartment/GetAll")
     suspend fun getAllApartments(): List<ApartmentDto>
 
-    @GET("api/ApartmentDto/{id}")
+    @GET("api/Apartment/{id}")
     suspend fun getApartmentById(@Path("id") id: Int): ApartmentDto
 
-    @PUT("api/ApartmentDto/{id}")
+    @PUT("api/Apartment/{id}")
     suspend fun updateApartment(@Path("id") id: Int, @Body apartment: ApartmentDto)
 
-    @DELETE("api/ApartmentDto/{id}")
+    @DELETE("api/Apartment/{id}")
     suspend fun deleteApartment(@Path("id") id: Int)
 
-    @POST("api/ApartmentDto")
+    @POST("api/Apartment")
     suspend fun createApartment(@Body apartment: ApartmentDto): ApartmentDto
 
     // Comment Endpoints

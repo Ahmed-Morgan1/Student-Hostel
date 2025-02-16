@@ -6,8 +6,9 @@ import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class ConnectivityHandler(
+class ConnectivityHandler @Inject constructor(
     private val connectivityManager: ConnectivityManager
 ) : IConnectivityHandler {
 

@@ -27,7 +27,7 @@ data class ApartmentDto(
     val ownerId: Int? = null,
 
     @field:SerializedName("num_Room")
-    val numRoom: Int? = null,
+    val numRoom: Int,
 
     @field:SerializedName("num_Bed")
     val numBed: Int? = null,
@@ -45,14 +45,14 @@ data class ApartmentDto(
     val title: String? = null,
 
     @field:SerializedName("floorNum")
-    val floorNum: Int? = null,
+    val floorNum: Int,
 
     @PrimaryKey(autoGenerate = true)
     @field:SerializedName("apartment_Id")
     val apartmentId: Int = 0,
 
     @field:SerializedName("price")
-    val price: Int? = null,
+    val price: Float,
 
     @field:SerializedName("isRented")
     val isRented: Boolean? = null

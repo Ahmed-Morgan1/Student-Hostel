@@ -9,7 +9,9 @@ import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import com.example.studenthostel.databinding.FragmentLoginBinding
 import com.example.studenthostel.databinding.FragmentSignupBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SignupFragment : Fragment() {
 
     private var _binding: FragmentSignupBinding? = null

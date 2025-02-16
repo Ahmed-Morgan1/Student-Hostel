@@ -10,7 +10,7 @@ import dagger.hilt.components.SingletonComponent
 
 @Module
 @InstallIn(SingletonComponent::class)
-abstract class ConnectivityHandlerBinder {
+interface ConnectivityHandlerBinder {
     @Binds
-    abstract fun bindConnectivityHandler(connectivityHandler: ConnectivityHandler): IConnectivityHandler
+    fun bindConnectivityHandler(connectivityHandler: ConnectivityHandler): IConnectivityHandler
 }
