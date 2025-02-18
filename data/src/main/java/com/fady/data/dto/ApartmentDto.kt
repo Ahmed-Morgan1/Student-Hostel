@@ -11,7 +11,7 @@ import com.google.gson.annotations.SerializedName
     foreignKeys = [
         ForeignKey(
             entity = OwnerDto::class,
-            parentColumns = ["ownerId"],
+            parentColumns = ["id"],
             childColumns = ["ownerId"],
             onDelete = ForeignKey.CASCADE,
             onUpdate = ForeignKey.CASCADE
@@ -24,7 +24,7 @@ data class ApartmentDto(
     val address: String? = null,
 
     @field:SerializedName("owner_Id")
-    val ownerId: Int? = null,
+    var ownerId: Int?= null,
 
     @field:SerializedName("num_Room")
     val numRoom: Int,
@@ -47,9 +47,9 @@ data class ApartmentDto(
     @field:SerializedName("floorNum")
     val floorNum: Int,
 
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     @field:SerializedName("apartment_Id")
-    val apartmentId: Int = 0,
+    val id: Int,
 
     @field:SerializedName("price")
     val price: Float,

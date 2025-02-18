@@ -9,7 +9,7 @@ data class ApartmentWithComment(
     @Embedded
     val apartment: ApartmentDto,
     @Relation(
-        parentColumn = "apartmentId",
+        parentColumn = "id",
         entityColumn = "apartmentId",
         entity = CommentDto::class
     )
@@ -25,7 +25,7 @@ data class ApartmentWithComment(
         locationImage = this.apartment.locationImage,
         title = this.apartment.title,
         floorNum = this.apartment.floorNum,
-        apartmentId = this.apartment.apartmentId,
+        id = this.apartment.id,
         price = this.apartment.price,
         isRented = this.apartment.isRented,
 //        comments = this.comments

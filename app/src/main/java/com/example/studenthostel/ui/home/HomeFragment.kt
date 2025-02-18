@@ -21,7 +21,7 @@ class HomeFragment : Fragment() {
     private val viewModel: HomeViewModel by viewModels()
     private var _binding: FragmentHomeBinding?=null
     private val binding: FragmentHomeBinding get () = _binding!!
-    lateinit var adapter: HomeAdaptor
+    private lateinit var adapter: HomeAdaptor
 
 
     override fun onCreateView(

@@ -38,7 +38,7 @@ class OwnerRepo @Inject constructor(
 
     override suspend fun deleteOwner(owner: OwnerDto) {
         if (isNetworkConnected == NetworkConnectivityStatus.CONNECTED) {
-            apiService.deleteOwner(owner.ownerId)
+            apiService.deleteOwner(owner.id)
             ownerDao.deleteOwner(owner)
         } else
             ownerDao.deleteOwner(owner)

@@ -39,11 +39,13 @@ class RepoModule {
     fun provideApartmentRepo(
         apartmentDao: ApartmentDao,
         apiService: ApiService,
+        ownerDao: OwnerDao,
         connectivityHandler: IConnectivityHandler
     ): IApartmentRepo = ApartmentRepo(
         apartmentDao = apartmentDao,
         connectivityHandler = connectivityHandler,
-        apiService = apiService
+        apiService = apiService,
+        ownerDao = ownerDao
     )
 
     @Provides

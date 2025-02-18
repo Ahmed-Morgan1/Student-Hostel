@@ -11,9 +11,9 @@ data class OwnerDto(
     @field:SerializedName("owner_Phone")
     val ownerPhone: Int? = null,
 
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     @field:SerializedName("owner_Id")
-    val ownerId: Int = 0,
+    val id: Int,
 
     @field:SerializedName("owner_FName")
     val ownerFName: String? = null,

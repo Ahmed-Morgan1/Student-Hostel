@@ -20,7 +20,7 @@ interface ApartmentDao {
     suspend fun getAllApartments(): List<ApartmentWithComment>
 
     @Transaction
-    @Query("SELECT * FROM Apartment WHERE apartmentId = :id")
+    @Query("SELECT * FROM Apartment WHERE id = :id")
     suspend fun getApartmentById(id: Int): ApartmentWithComment
 
     @Transaction

@@ -10,7 +10,7 @@ data class StudentWithApartment(
     val student: StudentDto,
     @Relation(
         parentColumn = "apartmentId",
-        entityColumn = "apartmentId",
+        entityColumn = "id",
         entity = ApartmentDto::class
     )
     val apartment: ApartmentDto?

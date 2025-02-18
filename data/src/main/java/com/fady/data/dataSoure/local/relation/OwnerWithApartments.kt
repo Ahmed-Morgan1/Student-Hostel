@@ -14,7 +14,7 @@ data class OwnerWithApartments(
     @Embedded
     val owner: OwnerDto,
     @Relation(
-        parentColumn = "ownerId",
+        parentColumn = "id",
         entityColumn = "ownerId",
         entity = ApartmentDto::class
     )
@@ -23,7 +23,7 @@ data class OwnerWithApartments(
 ) {
     fun toOwner() = OwnerDto(
         ownerPhone = this.owner.ownerPhone,
-        ownerId = this.owner.ownerId,
+        id = this.owner.id,
         ownerFName = this.owner.ownerFName,
         ownerLName = this.owner.ownerLName,
         ownerEmail = this.owner.ownerEmail,

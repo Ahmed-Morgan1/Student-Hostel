@@ -4,7 +4,7 @@ import com.example.studenthostel.model.Apartment
 import com.fady.data.dto.ApartmentDto
 
 fun ApartmentDto.toApartment(): Apartment = Apartment(
-    id = this.apartmentId,
+    id = this.id,
     floor = this.floorNum,
     roomCounter = this.numRoom,
     area = 0,
