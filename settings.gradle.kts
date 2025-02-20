@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Student Hostel"
 include(":app")
- 
+include(":data")

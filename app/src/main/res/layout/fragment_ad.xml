@@ -101,7 +101,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/gross"
+                android:id="@+id/beds"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:boxCornerRadiusBottomEnd="18dp"
@@ -115,16 +115,16 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_gross"
+                    android:id="@+id/et_beds"
                     android:layout_width="match_parent"
                     android:layout_height="52dp"
                     android:paddingHorizontal="8dp"
                     android:paddingVertical="10dp"
-                    android:hint="@string/gross_m" />
+                    android:hint="@string/beds" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/net"
+                android:id="@+id/Address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:boxCornerRadiusBottomEnd="18dp"
@@ -138,12 +138,12 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_net"
+                    android:id="@+id/et_address"
                     android:layout_width="match_parent"
                     android:layout_height="52dp"
                     android:paddingHorizontal="8dp"
                     android:paddingVertical="10dp"
-                    android:hint="@string/net_m" />
+                    android:hint="@string/adress" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -170,7 +170,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/floor_location"
+                android:id="@+id/description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:boxCornerRadiusBottomEnd="18dp"
@@ -184,12 +184,12 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_floor_location"
+                    android:id="@+id/et_description"
                     android:layout_width="match_parent"
                     android:layout_height="52dp"
                     android:paddingHorizontal="8dp"
                     android:paddingVertical="10dp"
-                    android:hint="@string/floor_location" />
+                    android:hint="Describtion" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -264,7 +264,7 @@
                 android:backgroundTint="@color/red" />
 
             <Button
-                android:id="@+id/btn_next"
+                android:id="@+id/btn_Adnext"
                 android:layout_width="280dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="16dp"
