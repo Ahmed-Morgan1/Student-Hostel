@@ -13,4 +13,5 @@ class HomeAdaptor: BaseAdapter<Apartment, ApartmentHolderBinding>() {
     override fun bindData(binding: ApartmentHolderBinding, item: Apartment, position: Int) {
         binding.apartment = item
     }
+
 }

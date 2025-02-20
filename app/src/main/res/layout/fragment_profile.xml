@@ -186,7 +186,7 @@
         android:layout_marginEnd="16dp"
         android:text="@string/save"
         android:textSize="20sp"
-        android:backgroundTint="@color/blue"
+        android:backgroundTint="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

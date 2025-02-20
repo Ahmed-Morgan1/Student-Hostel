@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.studenthostel.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -26,16 +27,17 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        navController = findNavController(R.id.frame_layout)
+        navController = findNavController(R.id.nav_host_fragment)
+        binding.navigationHome.setupWithNavController(navController)
         handleDesignationNavyHost()
     }
 
     private fun handleDesignationNavyHost() {
         navController.addOnDestinationChangedListener { _, navDestination: NavDestination, _ ->
             when (navDestination.id) {
-                R.id.homeFragment -> {toggleBottomNav(true)}
                 R.id.signupFragment2 -> {toggleBottomNav(false)}
                 R.id.loginFragment -> {toggleBottomNav(false)}
+                else -> {toggleBottomNav(true)}
             }
 
         }

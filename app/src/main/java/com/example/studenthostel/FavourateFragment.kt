@@ -6,29 +6,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.studenthostel.databinding.FragmentAdBinding
-import com.example.studenthostel.databinding.FragmentContactBinding
-import dagger.hilt.android.AndroidEntryPoint
+import com.example.studenthostel.databinding.FragmentFavourateBinding
+import com.example.studenthostel.databinding.FragmentSignupBinding
 
-
-@AndroidEntryPoint
-class ContactFragment : Fragment() {
-    private var _binding: FragmentContactBinding? = null
+class FavourateFragment : Fragment() {
+    private var _binding: FragmentFavourateBinding? = null
     private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentContactBinding.inflate(inflater, container, false)
+        _binding = FragmentFavourateBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.btnContactnext.setOnClickListener {
-            findNavController().navigate(R.id.action_contactFragment_to_sucssAdFragment)
-
-        }
-
     }
+
 }
