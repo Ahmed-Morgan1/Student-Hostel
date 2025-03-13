@@ -26,10 +26,19 @@
             android:src="@drawable/welcome_img"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
         <!--    desc apartment-->
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/favourite_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:layout_editor_absoluteY="6dp" />
+
         <TextView
             android:id="@+id/txt_price"
             android:layout_width="0dp"
