@@ -10,6 +10,7 @@ data class Apartment(
     val address: String?,
     val imgCoverUrl: String?,
     val date: String?,
+    val isFavourite: Boolean = false,
     val apartmentStatusType: ApartmentStatusType = ApartmentStatusType.SALE
 ) {
     // Enum class to represent the type of apartment (rent or sale)

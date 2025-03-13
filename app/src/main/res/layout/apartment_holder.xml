@@ -35,9 +35,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:src="@drawable/favourite_icon"
+            android:contentDescription="@string/apartment_img"
+            android:src="@{apartment.component9()? @drawable/filled_favourite_icon:@drawable/favourite_icon}"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:layout_editor_absoluteY="6dp" />
+            tools:layout_editor_absoluteY="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <TextView
             android:id="@+id/txt_price"
