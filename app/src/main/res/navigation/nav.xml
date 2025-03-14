@@ -6,7 +6,7 @@
     app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/signupFragment2"
-        android:name="com.example.studenthostel.SignupFragment"
+        android:name="com.example.studenthostel.ui.auth.SignupFragment"
         android:label="SignupFragment"
         tools:layout="@layout/fragment_signup">
         <action
@@ -36,7 +36,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.studenthostel.LoginFragment"
+        android:name="com.example.studenthostel.ui.auth.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -48,7 +48,7 @@
     </fragment>
     <fragment
         android:id="@+id/favourateFragment"
-        android:name="com.example.studenthostel.FavourateFragment"
+        android:name="com.example.studenthostel.ui.favourate.FavouriteFragment"
         android:label="fragment_favourate"
         tools:layout="@layout/fragment_favourate" >
         <action
