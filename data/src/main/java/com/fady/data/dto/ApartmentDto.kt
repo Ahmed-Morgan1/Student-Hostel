@@ -65,4 +65,7 @@ data class ApartmentDto(
     @Ignore
     @field:SerializedName("owner")
     val owner: OwnerDto? = null
+
+    @Ignore
+    var isFavourite: Boolean =false
 }
