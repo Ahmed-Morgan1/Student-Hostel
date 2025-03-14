@@ -1,4 +1,4 @@
-package com.example.studenthostel
+package com.example.studenthostel.ui.auth
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import android.widget.AutoCompleteTextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.studenthostel.R
 import com.example.studenthostel.databinding.FragmentSignupBinding
 import dagger.hilt.android.AndroidEntryPoint
 

@@ -3,16 +3,21 @@ package com.example.studenthostel.ui.home
 import androidx.lifecycle.viewModelScope
 import com.example.studenthostel.base.BaseViewModel
 import com.example.studenthostel.mapper.toApartment
+import com.example.studenthostel.mapper.toApartmentList
 import com.example.studenthostel.model.Apartment
-import com.fady.data.repo.impl.ApartmentRepo
+import com.fady.data.repo.base.IApartmentRepo
+import com.fady.data.repo.base.IFavouriteApartmentRepo
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val apartmentRepository: ApartmentRepo
+    private val apartmentRepository: IApartmentRepo,
+    private val favouriteApartmentRepository: IFavouriteApartmentRepo
 ) : BaseViewModel<HomeContract.HomeState, HomeContract.HomeEvent, HomeContract.HomeEffect>
 
     (HomeContract.HomeState()) {
@@ -34,25 +39,38 @@ class HomeViewModel @Inject constructor(
             HomeContract.HomeEvent.OnClickAllSales -> getAllApartments(isSalesOnly = true)
             is HomeContract.HomeEvent.OnClickApartment -> getApartmentDetails(event.apartment.id)
             HomeContract.HomeEvent.OnFetchApartments -> getAllApartments()
+            is HomeContract.HomeEvent.OnToggleApartmentFromFavourites -> toggleFavApartment(event.apartment)
+        }
+    }
+
+
+    private fun toggleFavApartment(apartment: Apartment) {
+        viewModelScope.launch(Dispatchers.IO) {
+            if (apartment.isFavourite) favouriteApartmentRepository
+                .removeApartmentFromFavourite(apartment.id)
+            else favouriteApartmentRepository
+                .addApartmentToFavourite(apartment.id)
         }
     }
 
     private fun getAllApartments(isSalesOnly: Boolean? = null) {
         setState(state.copy(isLoading = true))
-        viewModelScope.launch {
-            val apartments = apartmentRepository.getAllApartments().map {
-                it.toApartment()
-            }
-            if (isSalesOnly == null) setState(state.copy(apartments = apartments))
-            else if (isSalesOnly)
-                setState(state.copy(apartments = apartments.filter { it.apartmentStatusType == Apartment.ApartmentStatusType.SALE }))
-            else
-                setState(state.copy(apartments = apartments.filter { it.apartmentStatusType == Apartment.ApartmentStatusType.RENT }))
+        viewModelScope.launch(Dispatchers.IO) {
+           apartmentRepository.getAllApartments()
+                .map {
+                    it.toApartmentList()
+                }.collect { apartmentList ->
+                    if (isSalesOnly == null) setState(state.copy(apartments = apartmentList))
+                    else if (isSalesOnly) setState(state.copy(apartments = apartmentList.filter { it.apartmentStatusType == Apartment.ApartmentStatusType.SALE }))
+                    else setState(state.copy(apartments = apartmentList.filter { it.apartmentStatusType == Apartment.ApartmentStatusType.RENT }))
+                }
         }
+
     }
 
+
     private fun getApartmentDetails(id: Int) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             val apartment = apartmentRepository.getApartmentById(id).toApartment()
             sendEffect(HomeContract.HomeEffect.NavigateToDetails(apartment))
         }

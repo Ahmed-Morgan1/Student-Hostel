@@ -10,6 +10,7 @@ import androidx.room.Update
 import androidx.room.Upsert
 import com.fady.data.dataSoure.local.relation.ApartmentWithComment
 import com.fady.data.dto.ApartmentDto
+import kotlinx.coroutines.flow.Flow
 
 
 @Dao
@@ -18,6 +19,10 @@ interface ApartmentDao {
     @Transaction
     @Query("SELECT * FROM Apartment")
     suspend fun getAllApartments(): List<ApartmentWithComment>
+
+    @Transaction
+    @Query("SELECT * FROM Apartment")
+    fun getAllApartmentsFlow(): Flow<List<ApartmentWithComment>>
 
     @Transaction
     @Query("SELECT * FROM Apartment WHERE id = :id")

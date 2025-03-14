@@ -13,7 +13,6 @@ import com.example.studenthostel.databinding.FragmentHomeBinding
 import com.example.studenthostel.model.Apartment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -38,6 +37,12 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         adapter = HomeAdaptor()
+        adapter.onItemClickListener = HomeAdaptor.OnItemClickListener {
+            viewModel.event(HomeContract.HomeEvent.OnApartmentClicked(it))
+        }
+        adapter.onAddToFavouritesClickListener = HomeAdaptor.OnItemClickListener {
+            viewModel.event(HomeContract.HomeEvent.OnToggleApartmentFromFavourites(it))
+        }
         binding.rvFeaturedSales.adapter = adapter
         binding.rvFeaturedRental.adapter = adapter
         observeState()

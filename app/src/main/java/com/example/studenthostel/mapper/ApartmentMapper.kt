@@ -12,5 +12,8 @@ fun ApartmentDto.toApartment(): Apartment = Apartment(
     address = this.address,
     imgCoverUrl = this.locationImage,
     date = this.publishedDate,
+    isFavourite = this.isFavourite,
     apartmentStatusType = if (this.isRented == true) Apartment.ApartmentStatusType.RENT else Apartment.ApartmentStatusType.SALE
 )
+
+fun List<ApartmentDto>.toApartmentList(): List<Apartment> = this.map { it.toApartment() }

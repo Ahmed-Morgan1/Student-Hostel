@@ -11,7 +11,7 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
         android:background="@drawable/box_background"
@@ -19,7 +19,7 @@
 
         <ImageView
             android:id="@+id/apartment_img"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="150dp"
             android:contentDescription="@string/apartment_img"
             android:scaleType="centerCrop"

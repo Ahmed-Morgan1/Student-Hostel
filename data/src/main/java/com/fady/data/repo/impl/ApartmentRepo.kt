@@ -1,37 +1,62 @@
 package com.fady.data.repo.impl
 
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
 import com.fady.data.dataSoure.local.dao.ApartmentDao
 import com.fady.data.dataSoure.local.dao.OwnerDao
 import com.fady.data.dataSoure.remote.ApiService
+import com.fady.data.di.FavouriteApartmentDataStore
 import com.fady.data.dto.ApartmentDto
 import com.fady.data.networkConnectivity.IConnectivityHandler
 import com.fady.data.networkConnectivity.NetworkConnectivityStatus
 import com.fady.data.repo.base.IApartmentRepo
+import com.fady.data.repo.impl.FavouriteApartmentRepo.Companion.FAVOURITE_APARTMENTS
 import jakarta.inject.Inject
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.map
 
 class ApartmentRepo @Inject constructor(
     private val apartmentDao: ApartmentDao,
     private val ownerDao: OwnerDao,
-    private val connectivityHandler: IConnectivityHandler,
+    connectivityHandler: IConnectivityHandler,
+    @FavouriteApartmentDataStore private val dataStore: DataStore<Preferences>,
     private val apiService: ApiService
 ) : IApartmentRepo {
 
     private val isNetworkConnected = connectivityHandler.isNetworkAvailable()
 
-    override suspend fun getAllApartments(): List<ApartmentDto> =
-        when (isNetworkConnected) {
-            NetworkConnectivityStatus.CONNECTED -> {
-               val apartments = apiService.getAllApartments()
-                saveApartmentsLocally(apartments)
-                apartments
+    private val favApartmentIdsFlow = dataStore.data.map {
+        it[FAVOURITE_APARTMENTS] ?: emptySet()
+    }.distinctUntilChanged()
+
+    override suspend fun getAllApartments(): Flow<List<ApartmentDto>> {
+
+
+        return when (isNetworkConnected) {
+            NetworkConnectivityStatus.CONNECTED -> combine(
+                favApartmentIdsFlow,
+                flowOf(apiService.getAllApartments())
+            ) { favApartmentIds, apartments ->
+                apartments.onEach { it.isFavourite = favApartmentIds.contains(it.id.toString()) }
             }
-            NetworkConnectivityStatus.NOT_CONNECTED -> apartmentDao.getAllApartments().map {
-                it.toApartment()
+
+            NetworkConnectivityStatus.NOT_CONNECTED -> combine(
+                favApartmentIdsFlow,
+                apartmentDao.getAllApartmentsFlow()
+                    .map { list -> list.map { it.toApartment() } }
+            ) { favApartmentIds, apartments ->
+                apartments.onEach { it.isFavourite = favApartmentIds.contains(it.id.toString()) }
             }
         }
+    }
 
-    override suspend fun getApartmentById(id: Int): ApartmentDto =
-        when (isNetworkConnected) {
+
+    private suspend fun getApartmentsFlow() = flowOf(apiService.getAllApartments())
+
+    override suspend fun getApartmentById(id: Int): ApartmentDto = when (isNetworkConnected) {
             NetworkConnectivityStatus.CONNECTED -> apiService.getApartmentById(id)
             NetworkConnectivityStatus.NOT_CONNECTED -> apartmentDao.getApartmentById(id)
                 .toApartment()
@@ -45,4 +70,5 @@ class ApartmentRepo @Inject constructor(
         ownerDao.upsertOwner(owners)
         apartmentDao.upsertApartment(apartments)
     }
+
 }

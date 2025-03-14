@@ -24,6 +24,8 @@ interface HomeContract {
         data object OnClickALlFeaturedRental: HomeEvent
         data class OnSearchQueryChanged(val query: String): HomeEvent
         data class OnApartmentClicked(val apartment: Apartment): HomeEvent
+        data class OnToggleApartmentFromFavourites(val apartment: Apartment): HomeEvent
+
     }
 
     sealed interface HomeEffect: BaseViewModel.Effect{

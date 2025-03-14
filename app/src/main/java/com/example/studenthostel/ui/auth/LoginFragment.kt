@@ -1,4 +1,4 @@
-package com.example.studenthostel
+package com.example.studenthostel.ui.auth
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.studenthostel.R
 import com.example.studenthostel.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
 
