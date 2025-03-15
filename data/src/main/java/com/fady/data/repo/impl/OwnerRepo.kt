@@ -1,6 +1,6 @@
 package com.fady.data.repo.impl
 
-import com.fady.data.dataSoure.local.dao.OwnerDao
+import com.fady.data.dataSoure.local.dataBase.dao.OwnerDao
 import com.fady.data.dataSoure.remote.ApiService
 import com.fady.data.dto.OwnerDto
 import com.fady.data.networkConnectivity.IConnectivityHandler

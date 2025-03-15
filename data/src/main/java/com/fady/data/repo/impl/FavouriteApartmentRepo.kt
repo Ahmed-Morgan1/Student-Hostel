@@ -4,9 +4,8 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringSetPreferencesKey
-import com.fady.data.dataSoure.local.dao.ApartmentDao
+import com.fady.data.dataSoure.local.dataBase.dao.ApartmentDao
 import com.fady.data.dataSoure.remote.ApiService
-import com.fady.data.di.FavouriteApartmentDataStore
 import com.fady.data.dto.ApartmentDto
 import com.fady.data.networkConnectivity.IConnectivityHandler
 import com.fady.data.networkConnectivity.NetworkConnectivityStatus
@@ -23,7 +22,7 @@ class FavouriteApartmentRepo @Inject constructor(
     private val apiService: ApiService,
     connectivityHandler: IConnectivityHandler,
     private val apartmentDao: ApartmentDao,
-    @FavouriteApartmentDataStore private val dataStore: DataStore<Preferences>
+    private val dataStore: DataStore<Preferences>
 ) : IFavouriteApartmentRepo {
 
     private val isConnected = connectivityHandler.isNetworkAvailable()

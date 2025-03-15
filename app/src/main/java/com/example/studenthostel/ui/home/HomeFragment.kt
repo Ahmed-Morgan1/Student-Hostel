@@ -54,6 +54,7 @@ class HomeFragment : Fragment() {
     private fun observeState() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
+
                 viewModel.currentState.collect {
                     val apartments = it.apartments.sortedBy {apartment ->
                         apartment.apartmentStatusType == Apartment.ApartmentStatusType.RENT

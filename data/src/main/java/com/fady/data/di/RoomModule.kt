@@ -2,7 +2,7 @@ package com.fady.data.di
 
 import android.content.Context
 import androidx.room.Room
-import com.fady.data.dataSoure.local.RoomHostel
+import com.fady.data.dataSoure.local.dataBase.RoomHostel
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

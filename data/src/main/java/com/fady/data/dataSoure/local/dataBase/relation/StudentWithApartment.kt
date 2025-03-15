@@ -1,4 +1,4 @@
-package com.fady.data.dataSoure.local.relation
+package com.fady.data.dataSoure.local.dataBase.relation
 
 import androidx.room.Embedded
 import androidx.room.Relation

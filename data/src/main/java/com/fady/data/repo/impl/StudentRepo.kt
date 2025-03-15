@@ -1,6 +1,6 @@
 package com.fady.data.repo.impl
 
-import com.fady.data.dataSoure.local.dao.StudentDao
+import com.fady.data.dataSoure.local.dataBase.dao.StudentDao
 import com.fady.data.dataSoure.remote.ApiService
 import com.fady.data.dto.StudentDto
 import com.fady.data.networkConnectivity.IConnectivityHandler

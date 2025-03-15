@@ -8,7 +8,7 @@ import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Update
 import androidx.room.Upsert
-import com.fady.data.dataSoure.local.relation.ApartmentWithComment
+import com.fady.data.dataSoure.local.dataBase.relation.ApartmentWithComment
 import com.fady.data.dto.ApartmentDto
 import kotlinx.coroutines.flow.Flow
 

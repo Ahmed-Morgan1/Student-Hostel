@@ -1,4 +1,4 @@
-package com.fady.data.dataSoure.local.dao
+package com.fady.data.dataSoure.local.dataBase.dao
 
 import androidx.room.Dao
 import androidx.room.Delete

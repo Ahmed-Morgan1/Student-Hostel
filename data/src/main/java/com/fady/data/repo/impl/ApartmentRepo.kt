@@ -2,10 +2,9 @@ package com.fady.data.repo.impl
 
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
-import com.fady.data.dataSoure.local.dao.ApartmentDao
-import com.fady.data.dataSoure.local.dao.OwnerDao
+import com.fady.data.dataSoure.local.dataBase.dao.ApartmentDao
+import com.fady.data.dataSoure.local.dataBase.dao.OwnerDao
 import com.fady.data.dataSoure.remote.ApiService
-import com.fady.data.di.FavouriteApartmentDataStore
 import com.fady.data.dto.ApartmentDto
 import com.fady.data.networkConnectivity.IConnectivityHandler
 import com.fady.data.networkConnectivity.NetworkConnectivityStatus
@@ -22,7 +21,7 @@ class ApartmentRepo @Inject constructor(
     private val apartmentDao: ApartmentDao,
     private val ownerDao: OwnerDao,
     connectivityHandler: IConnectivityHandler,
-    @FavouriteApartmentDataStore private val dataStore: DataStore<Preferences>,
+    private val dataStore: DataStore<Preferences>,
     private val apiService: ApiService
 ) : IApartmentRepo {
 

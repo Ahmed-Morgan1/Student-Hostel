@@ -1,4 +1,4 @@
-package com.fady.data.dataSoure.local.dao
+package com.fady.data.dataSoure.local.dataBase.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -8,7 +8,7 @@ import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Update
 import androidx.room.Upsert
-import com.fady.data.dataSoure.local.relation.OwnerWithApartments
+import com.fady.data.dataSoure.local.dataBase.relation.OwnerWithApartments
 import com.fady.data.dto.OwnerDto
 
 @Dao

@@ -1,4 +1,4 @@
-package com.fady.data.dataSoure.local.dao
+package com.fady.data.dataSoure.local.dataBase.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -7,7 +7,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Update
-import com.fady.data.dataSoure.local.relation.StudentWithApartment
+import com.fady.data.dataSoure.local.dataBase.relation.StudentWithApartment
 import com.fady.data.dto.StudentDto
 
 @Dao
