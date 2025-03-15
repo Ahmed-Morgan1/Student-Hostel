@@ -4,6 +4,7 @@ import com.fady.data.dto.ApartmentDto
 import com.fady.data.dto.CommentDto
 import com.fady.data.dto.OwnerDto
 import com.fady.data.dto.StudentDto
+import com.fady.data.model.LoginUser
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET
@@ -68,4 +69,11 @@ interface ApiService {
 
     @POST("api/Student")
     suspend fun createStudent(@Body student: StudentDto): StudentDto
+
+    @POST("api/auth/register")
+    suspend fun register(@Body user: LoginUser)
+
+    @POST("api/auth/login")
+    suspend fun login(@Body user: LoginUser): Pair<String, String>
+
 }
