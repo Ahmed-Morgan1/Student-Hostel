@@ -8,16 +8,24 @@ import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.example.studenthostel.R
 import com.example.studenthostel.databinding.FragmentSignupBinding
+import com.example.studenthostel.ui.auth.contract.SignUpContract
+import com.example.studenthostel.ui.auth.viewModel.SignupViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class SignupFragment : Fragment() {
 
     private var _binding: FragmentSignupBinding? = null
     private val binding get() = _binding!!
+    private val viewModel: SignupViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,6 +49,7 @@ class SignupFragment : Fragment() {
         // إعداد المستمع عند اختيار عنصر
         autoCompleteTextView.setOnItemClickListener { adapterView, _, position, _ ->
             val item = adapterView.getItemAtPosition(position).toString()
+            viewModel.event(SignUpContract.SignUpEvent.OnAccountTypeSelected(item))
             Toast.makeText(requireContext(), "تم اختيار: $item", Toast.LENGTH_SHORT).show()
         }
 
@@ -52,6 +61,21 @@ class SignupFragment : Fragment() {
         // إعداد التنقل إلى تسجيل الدخول
         binding.LoginText.setOnClickListener {
             findNavController().navigate(R.id.action_signupFragment2_to_loginFragment)
+        }
+    }
+
+    private fun observeStateViewModel() {
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.currentState.collect { state ->
+                    binding.etName.setText(state.name)
+                    binding.etEmail.setText(state.email)
+                    binding.etPassword.setText(state.password)
+                    binding.etRepassword.setText(state.confirmPassword)
+                    binding.autoCompleteTextView.setText(state.accountType)
+
+                }
+            }
         }
     }
 

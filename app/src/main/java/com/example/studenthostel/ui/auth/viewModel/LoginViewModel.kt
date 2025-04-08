@@ -29,6 +29,7 @@ class LoginViewModel @Inject constructor(
 
     private fun login(email: String, password: String) {
         viewModelScope.launch {
+            sendEffect(LoginContract.LoginEffect.NavigateToHome)
           when (val result =  authRepository.login(email, password)) {
                 is AuthResult.Error -> sendEffect(LoginContract.LoginEffect.ShowError(result.message))
                 is AuthResult.Success -> sendEffect(LoginContract.LoginEffect.NavigateToHome)

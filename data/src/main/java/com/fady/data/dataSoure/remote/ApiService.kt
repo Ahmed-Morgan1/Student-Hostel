@@ -5,6 +5,7 @@ import com.fady.data.dto.CommentDto
 import com.fady.data.dto.OwnerDto
 import com.fady.data.dto.StudentDto
 import com.fady.data.model.LoginUser
+import com.fady.data.model.SignupUser
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET
@@ -71,7 +72,7 @@ interface ApiService {
     suspend fun createStudent(@Body student: StudentDto): StudentDto
 
     @POST("api/auth/register")
-    suspend fun register(@Body user: LoginUser)
+    suspend fun register(@Body user: SignupUser): Pair<String, String>
 
     @POST("api/auth/login")
     suspend fun login(@Body user: LoginUser): Pair<String, String>

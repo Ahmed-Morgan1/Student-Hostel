@@ -60,7 +60,7 @@
     </fragment>
     <fragment
         android:id="@+id/adFragment"
-        android:name="com.example.studenthostel.AdFragment"
+        android:name="com.example.studenthostel.ui.ad.AdFragment"
         android:label="fragment_ad"
         tools:layout="@layout/fragment_ad" >
         <action
@@ -72,7 +72,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.studenthostel.ProfileFragment"
+        android:name="com.example.studenthostel.ui.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action
@@ -81,7 +81,7 @@
     </fragment>
     <fragment
         android:id="@+id/contactFragment"
-        android:name="com.example.studenthostel.ContactFragment"
+        android:name="com.example.studenthostel.ui.contact.ContactFragment"
         android:label="fragment_contact"
         tools:layout="@layout/fragment_contact" >
 
@@ -109,7 +109,7 @@
     </fragment>
     <fragment
         android:id="@+id/reviewMyDealFragment"
-        android:name="com.example.studenthostel.ReviewMyDealFragment"
+        android:name="com.example.studenthostel.ui.reviewDeal.ReviewMyDealFragment"
         android:label="fragment_review_my_deal"
         tools:layout="@layout/fragment_review_my_deal" >
         <action
@@ -121,7 +121,7 @@
     </fragment>
     <fragment
         android:id="@+id/sucssAdFragment"
-        android:name="com.example.studenthostel.SucssAdFragment"
+        android:name="com.example.studenthostel.ui.successAd.SuccessAdFragment"
         android:label="fragment_sucss_ad"
         tools:layout="@layout/fragment_sucss_ad" >
         <action
@@ -141,7 +141,7 @@
     </fragment>
     <fragment
         android:id="@+id/payFragment"
-        android:name="com.example.studenthostel.PayFragment"
+        android:name="com.example.studenthostel.ui.pay.PayFragment"
         android:label="fragment_pay"
         tools:layout="@layout/fragment_pay" >
         <action

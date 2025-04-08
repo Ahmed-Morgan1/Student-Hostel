@@ -4,6 +4,7 @@ import com.fady.data.dataSoure.local.prefrances.TokenManager
 import com.fady.data.dataSoure.remote.ApiService
 import com.fady.data.model.AuthResult
 import com.fady.data.model.LoginUser
+import com.fady.data.model.SignupUser
 import com.fady.data.repo.base.IAuthRepository
 import javax.inject.Inject
 
@@ -16,10 +17,23 @@ class AuthRepository @Inject constructor(
         name: String,
         email: String,
         password: String,
-        confirmPassword: String,
+        phoneNumber: String,
         accountType: String
     ): AuthResult {
-        TODO("Not yet implemented")
+        val signUpUser = SignupUser(
+            username = name,
+            email = email,
+            password = password,
+            phoneNumber = phoneNumber,
+            role = accountType
+        )
+        return try {
+            val token = apiService.register(signUpUser)
+            tokenManager.saveToken(token.second)
+            AuthResult.Success
+        } catch (e: Exception) {
+            AuthResult.Error(e.message ?: "An unknown error occurred")
+        }
     }
 
     override suspend fun login(email: String, password: String): AuthResult {
