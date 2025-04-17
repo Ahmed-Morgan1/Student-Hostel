@@ -34,7 +34,7 @@ object RetrofitModule {
     ): Retrofit {
         return Retrofit.Builder()
             .client(okHttpClient)
-            .baseUrl("http://studenthostelwebsite.runasp.net/")
+            .baseUrl("http://studenthostelwebsite.runasp.net/api/")
             .addConverterFactory(gsonConverterFactory)
             .build()
 

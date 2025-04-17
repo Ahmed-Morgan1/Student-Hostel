@@ -17,64 +17,64 @@ import retrofit2.http.Path
 interface ApiService {
 
     // Apartment Endpoints
-    @GET("api/Apartment/GetAll")
+    @GET("Apartment/GetAll")
     suspend fun getAllApartments(): List<ApartmentDto>
 
-    @GET("api/Apartment/{id}")
+    @GET("Apartment/{id}")
     suspend fun getApartmentById(@Path("id") id: Int): ApartmentDto
 
-    @PUT("api/Apartment/{id}")
+    @PUT("Apartment/{id}")
     suspend fun updateApartment(@Path("id") id: Int, @Body apartment: ApartmentDto)
 
-    @DELETE("api/Apartment/{id}")
+    @DELETE("Apartment/{id}")
     suspend fun deleteApartment(@Path("id") id: Int)
 
-    @POST("api/Apartment")
+    @POST("Apartment")
     suspend fun createApartment(@Body apartment: ApartmentDto): ApartmentDto
 
     // Comment Endpoints
-    @POST("api/Comment")
+    @POST("Comment")
     suspend fun postComment(@Body comment: CommentDto): CommentDto
 
-    @DELETE("api/Comment/{id}")
+    @DELETE("Comment/{id}")
     suspend fun deleteComment(@Path("id") id: Int)
 
     // Owner Endpoints
-    @GET("api/Owner/GetAll")
+    @GET("Owner/GetAll")
     suspend fun getAllOwners(): List<OwnerDto>
 
-    @GET("api/Owner/{id}")
+    @GET("Owner/{id}")
     suspend fun getOwnerById(@Path("id") id: Int): OwnerDto
 
-    @PUT("api/Owner/{id}")
+    @PUT("Owner/{id}")
     suspend fun updateOwner(@Path("id") id: Int, @Body owner: OwnerDto)
 
-    @DELETE("api/Owner/{id}")
+    @DELETE("Owner/{id}")
     suspend fun deleteOwner(@Path("id") id: Int)
 
-    @POST("api/Owner")
+    @POST("Owner")
     suspend fun createOwner(@Body owner: OwnerDto): OwnerDto
 
     // Student Endpoints
-    @GET("api/Student/GetAll")
+    @GET("Student/GetAll")
     suspend fun getAllStudents(): List<StudentDto>
 
-    @GET("api/Student/{id}")
+    @GET("Student/{id}")
     suspend fun getStudentById(@Path("id") id: Int): StudentDto
 
-    @PUT("api/Student/{id}")
+    @PUT("Student/{id}")
     suspend fun updateStudent(@Path("id") id: Int, @Body student: StudentDto)
 
-    @DELETE("api/Student/{id}")
+    @DELETE("Student/{id}")
     suspend fun deleteStudent(@Path("id") id: Int)
 
-    @POST("api/Student")
+    @POST("Student")
     suspend fun createStudent(@Body student: StudentDto): StudentDto
 
-    @POST("api/auth/register")
+    @POST("auth/register")
     suspend fun register(@Body user: SignupUser): Pair<String, String>
 
-    @POST("api/auth/login")
+    @POST("auth/login")
     suspend fun login(@Body user: LoginUser): Pair<String, String>
 
 }
