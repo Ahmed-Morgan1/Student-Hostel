@@ -15,10 +15,12 @@ class SuccessAdViewModel @Inject constructor(
         SuccessAdContract.SuccessAdState,
         SuccessAdContract.SuccessAdEvent,
         SuccessAdContract.SuccessAdEffect>(
-    initialState = SuccessAdContract.SuccessAdState()
+    initialState = SuccessAdContract.SuccessAdState
 ) {
     override fun event(event: SuccessAdContract.SuccessAdEvent) {
-        TODO("Not yet implemented")
+        when (event) {
+            SuccessAdContract.SuccessAdEvent.OnBackToHomeClicked -> sendEffect(SuccessAdContract.SuccessAdEffect.NavigateToHome)
+        }
     }
 
 }

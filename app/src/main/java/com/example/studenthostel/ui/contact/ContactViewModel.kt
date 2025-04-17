@@ -17,7 +17,7 @@ class ContactViewModel @Inject constructor(
 ) {
     override fun event(event: ContactContract.ContactEvent) {
         when (event) {
-            is ContactContract.ContactEvent.OnNextClicked -> TODO()
+            is ContactContract.ContactEvent.OnNextClicked -> sendEffect(ContactContract.ContactEffect.NavigateToSuccessAd)
         }
     }
 }

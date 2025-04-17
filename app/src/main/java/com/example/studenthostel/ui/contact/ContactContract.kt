@@ -12,7 +12,7 @@ interface ContactContract {
     }
 
     sealed class ContactEffect :BaseViewModel.Effect{
-        data object NavigateToBooking : ContactEffect()
+        data object NavigateToSuccessAd : ContactEffect()
     }
 
 }

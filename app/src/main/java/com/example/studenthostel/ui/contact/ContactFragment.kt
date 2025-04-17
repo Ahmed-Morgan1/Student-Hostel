@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.example.studenthostel.R
 import com.example.studenthostel.base.BaseFragment
-import com.example.studenthostel.base.BaseViewModel
 import com.example.studenthostel.databinding.FragmentContactBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -15,10 +14,8 @@ class ContactFragment : BaseFragment<FragmentContactBinding,
         ContactContract.ContactState,
         ContactContract.ContactEvent,
         ContactContract.ContactEffect>() {
-    override val viewModel: BaseViewModel<
-            ContactContract.ContactState,
-            ContactContract.ContactEvent,
-            ContactContract.ContactEffect> by viewModels()
+
+    override val viewModel by viewModels<ContactViewModel>()
 
     override fun setContent() {
         binding.btnContactnext.setOnClickListener {
@@ -36,10 +33,13 @@ class ContactFragment : BaseFragment<FragmentContactBinding,
 
     override fun onEffect(viewEffect: ContactContract.ContactEffect) {
         when (viewEffect) {
-            ContactContract.ContactEffect.NavigateToBooking -> navController.navigate(R.id.bookingFragment)
+            ContactContract.ContactEffect.NavigateToSuccessAd ->
+                navController.navigate(R.id.sucssAdFragment)
         }
     }
 
-    override fun onUiStateChange(viewState: ContactContract.ContactState) = Unit
+    override fun onUiStateChange(viewState: ContactContract.ContactState) {
+
+    }
 
 }

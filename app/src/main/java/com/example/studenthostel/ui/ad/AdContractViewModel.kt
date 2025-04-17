@@ -18,6 +18,8 @@ class AdContractViewModel @Inject constructor(
     AdContract.AdState
 ) {
     override fun event(event: AdContract.AdEvent) {
-        TODO("Not yet implemented")
+        when (event) {
+            AdContract.AdEvent.OnNextClick -> sendEffect(AdContract.AdEffect.NavigateToContact)
+        }
     }
 }
