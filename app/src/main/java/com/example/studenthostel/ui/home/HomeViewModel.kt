@@ -18,13 +18,13 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     private val apartmentRepository: IApartmentRepo,
     private val favouriteApartmentRepository: IFavouriteApartmentRepo
-) : BaseViewModel<HomeContract.HomeState, HomeContract.HomeEvent, HomeContract.HomeEffect>
-
-    (HomeContract.HomeState()) {
+) : BaseViewModel<HomeContract.HomeState, HomeContract.HomeEvent, HomeContract.HomeEffect>(
+   initialState = HomeContract.HomeState()
+) {
 
     override fun event(event: HomeContract.HomeEvent) {
         when (event) {
-            is HomeContract.HomeEvent.OnApartmentClicked -> sendEffect(HomeContract.HomeEffect.NavigateToDetails(event.apartment))
+            is HomeContract.HomeEvent.OnApartmentClicked -> sendEffect(HomeContract.HomeEffect.NavigateToDetails(event.apartmentId))
             HomeContract.HomeEvent.OnClickAllFeaturedSales -> sendEffect(
                 HomeContract.HomeEffect.NavigateToAllSales(
                     state.apartments.filter { it.apartmentStatusType == Apartment.ApartmentStatusType.SALE })
@@ -37,7 +37,6 @@ class HomeViewModel @Inject constructor(
 
             HomeContract.HomeEvent.OnClickAllRental -> getAllApartments(isSalesOnly = false)
             HomeContract.HomeEvent.OnClickAllSales -> getAllApartments(isSalesOnly = true)
-            is HomeContract.HomeEvent.OnClickApartment -> getApartmentDetails(event.apartment.id)
             HomeContract.HomeEvent.OnFetchApartments -> getAllApartments()
             is HomeContract.HomeEvent.OnToggleApartmentFromFavourites -> toggleFavApartment(event.apartment)
         }
@@ -71,8 +70,7 @@ class HomeViewModel @Inject constructor(
 
     private fun getApartmentDetails(id: Int) {
         viewModelScope.launch(Dispatchers.IO) {
-            val apartment = apartmentRepository.getApartmentById(id).toApartment()
-            sendEffect(HomeContract.HomeEffect.NavigateToDetails(apartment))
+
         }
     }
 }

@@ -30,10 +30,10 @@ class AdFragment : BaseFragment<FragmentAdBinding,
         FragmentAdBinding.inflate(inflater, container, false)
 
     override fun onEffect(viewEffect: AdContract.AdEffect) {
-        TODO("Not yet implemented")
+        // NOT implemented
     }
 
     override fun onUiStateChange(viewState: AdContract.AdState) {
-        TODO("Not yet implemented")
+        // NOT implemented
     }
 }

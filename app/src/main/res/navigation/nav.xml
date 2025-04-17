@@ -32,7 +32,11 @@
             app:destination="@id/profileFragment" />
         <action
             android:id="@+id/action_homeFragment_to_contactPageFragment"
-            app:destination="@id/contactPageFragment" />
+            app:destination="@id/contactPageFragment">
+            <argument
+                android:name="Apartment_id"
+                app:argType="integer" />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -94,6 +98,7 @@
     </fragment>
     <fragment
         android:id="@+id/contactPageFragment"
+        android:name="com.example.studenthostel.ui.content_page.ContentPageFragment"
         android:label="fragment_contact_page"
         tools:layout="@layout/fragment_content_page" >
 
@@ -130,6 +135,7 @@
     </fragment>
     <fragment
         android:id="@+id/bookingFragment"
+        android:name="com.example.studenthostel.ui.booking.BookingFragment"
         android:label="fragment_booking"
         tools:layout="@layout/booking_fragment" >
         <action
